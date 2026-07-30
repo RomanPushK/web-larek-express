@@ -38,7 +38,7 @@ export const createOrder = async (req: Request, res: Response, next: NextFunctio
       return next(new BadRequestError(type));
     }
 
-    return res.status(201).json({
+    return res.status(200).json({
       id: faker.string.uuid(),
       total,
     });
