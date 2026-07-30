@@ -9,7 +9,7 @@ export const CATEGORY_CLASSES = {
   'хард-скил': styles.card__category_hard,
   'другое': styles.card__category_other,
   'дополнительное': styles.card__category_additional,
-  'кнопка': styles.card__category_button,
+  'кнопка': styles.card__category_button,	
 }
 
 export enum AppRoute {
