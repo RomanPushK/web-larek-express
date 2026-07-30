@@ -16,12 +16,12 @@ interface IProduct {
 const imageSchema = new mongoose.Schema<IImage>({
   fileName: {
     type: String,
-    required: true
+    required: true,
   },
   originalName: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const productSchema = new mongoose.Schema<IProduct>({
@@ -30,25 +30,25 @@ const productSchema = new mongoose.Schema<IProduct>({
     minlength: 2,
     maxlength: 30,
     required: true,
-    unique: true
+    unique: true,
   },
   image: {
     type: imageSchema,
-    required: true
+    required: true,
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: false
+    required: false,
   },
   price: {
     type: Number,
     required: false,
-    default: null
-  }
+    default: null,
+  },
 });
 
-export default mongoose.model<IProduct>('product', productSchema)
+export default mongoose.model<IProduct>('product', productSchema);

@@ -1,12 +1,13 @@
-import { Router, Request, Response } from 'express';
-import { createOrder } from '../controllers/order'
+import { Router } from 'express';
+import { createOrder } from '../controllers/order';
 import { validateOrderBody } from '../middlewares/validation';
 
-const router = Router()
+const router = Router();
 
-router.post('/',
+router.post(
+  '/',
   validateOrderBody,
-  createOrder
+  createOrder,
 );
 
 export default router;

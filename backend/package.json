@@ -4,7 +4,8 @@
   "description": "< Добавьте описание проекта в свободной форме >",
   "main": "dist/app.js",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint --no-eslintrc -c .eslintrc \"src/**/*.ts\"",
+    "lint:fix": "eslint --no-eslintrc -c .eslintrc \"src/**/*.ts\" --fix",
     "build": "tsc && copyfiles -u 1 src/public/**/* dist/public",
     "start": "ts-node src/app.ts",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
@@ -23,6 +24,7 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-postcss-modules": "^2.0.0",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
@@ -35,7 +37,6 @@
     "express-winston": "^4.2.0",
     "joi": "^18.2.3",
     "mongoose": "^8.3.2",
-    "validator": "^13.11.0",
     "winston": "^3.19.0"
   }
 }

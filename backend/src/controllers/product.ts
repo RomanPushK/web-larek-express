@@ -4,7 +4,6 @@ import Product from '../models/product';
 import BadRequestError from '../errors/bad-request-error';
 import ConflictError from '../errors/conflict-error';
 
-
 export const getProducts = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const products = await Product.find();
@@ -14,7 +13,7 @@ export const getProducts = async (req: Request, res: Response, next: NextFunctio
       total: products.length,
     });
   } catch (error) {
-    return next(error)
+    return next(error);
   }
 };
 
@@ -25,7 +24,7 @@ export const createProduct = async (req: Request, res: Response, next: NextFunct
     return res.status(201).json(product);
   } catch (error) {
     if (error instanceof MongooseError.ValidationError) {
-      return next(new BadRequestError('Ошибка валидации данных при создании товара'))
+      return next(new BadRequestError('Ошибка валидации данных при создании товара'));
     }
     if (error instanceof Error && error.message.includes('E11000')) {
       return next(new ConflictError('Товар с таким названием уже существует'));
