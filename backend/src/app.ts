@@ -1,12 +1,12 @@
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import productRouter from 'routes/product'
-import orderRouter from 'routes/order'
-import errorHandler from 'middlewares/error-handler';
-import NotFoundError from 'errors/not-found-error';
+import productRouter from './routes/product'
+import orderRouter from './routes/order'
+import errorHandler from './middlewares/error-handler';
+import NotFoundError from './errors/not-found-error';
 import { errors } from 'celebrate';
-import { errorLogger, requestLogger } from 'middlewares/logger';
+import { errorLogger, requestLogger } from './middlewares/logger';
 import path from 'path';
 
 
