@@ -4,6 +4,7 @@ npm-debug.log*
 request.log
 error.log
 node_modules
+package-lock.json
 .npm
 .DS_Store
 .idea
@@ -11,5 +12,3 @@ node_modules
 dist
 temp
 .env
-../node_modules/
-../package-lock.json
